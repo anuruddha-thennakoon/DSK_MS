@@ -1,0 +1,1221 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.0.22-community-nt
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema dmk
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ dmk;
+USE dmk;
+
+--
+-- Table structure for table `dmk`.`account`
+--
+
+DROP TABLE IF EXISTS `account`;
+CREATE TABLE `account` (
+  `id` int(11) NOT NULL auto_increment,
+  `aid` varchar(45) NOT NULL,
+  `ref_id` varchar(45) default NULL,
+  `amount` double default NULL,
+  `date` date default NULL,
+  `type` varchar(45) default NULL,
+  PRIMARY KEY  (`id`,`aid`),
+  KEY `fk_account_accounts1_idx` (`aid`),
+  CONSTRAINT `fk_account_accounts1` FOREIGN KEY (`aid`) REFERENCES `accounts` (`aid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`account`
+--
+
+/*!40000 ALTER TABLE `account` DISABLE KEYS */;
+INSERT INTO `account` (`id`,`aid`,`ref_id`,`amount`,`date`,`type`) VALUES 
+ (1,'DSKT15000001','25862',1300,'2016-06-10','Debit'),
+ (2,'DSKH15000001','25862',1300,'2016-06-10','Credit'),
+ (3,'DSKT15000001','9jgv461',12500,'2016-06-10','Debit'),
+ (4,'DSKH15000001','9jgv461',12500,'2016-06-10','Credit');
+/*!40000 ALTER TABLE `account` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`accounts`
+--
+
+DROP TABLE IF EXISTS `accounts`;
+CREATE TABLE `accounts` (
+  `aid` varchar(45) NOT NULL,
+  `type` varchar(45) default NULL,
+  PRIMARY KEY  (`aid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`accounts`
+--
+
+/*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
+INSERT INTO `accounts` (`aid`,`type`) VALUES 
+ ('DSKC15000001','Customer account'),
+ ('DSKC15000002','Customer account'),
+ ('DSKC15000003','Customer account'),
+ ('DSKC15000004','Customer account'),
+ ('DSKC15000005','Customer account'),
+ ('DSKC15000006','Customer account'),
+ ('DSKC15000007','Customer account'),
+ ('DSKC15000008','Customer account'),
+ ('DSKC15000009','Customer account'),
+ ('DSKC15000010','Customer account'),
+ ('DSKC15000011','Customer account'),
+ ('DSKC15000012','Customer account'),
+ ('DSKC15000013','Customer account'),
+ ('DSKC15000014','Customer account'),
+ ('DSKC15000015','Customer account'),
+ ('DSKC15000016','Customer account'),
+ ('DSKC15000017','Customer account'),
+ ('DSKC15000018','Customer account'),
+ ('DSKC15000019','Customer account'),
+ ('DSKC15000020','Customer account'),
+ ('DSKC15000021','Customer account'),
+ ('DSKC15000022','Customer account'),
+ ('DSKC15000023','Customer account'),
+ ('DSKC15000024','Customer account'),
+ ('DSKC15000025','Customer account'),
+ ('DSKC15000026','Customer account'),
+ ('DSKC15000027','Customer account');
+INSERT INTO `accounts` (`aid`,`type`) VALUES 
+ ('DSKC15000028','Customer account'),
+ ('DSKC15000029','Customer account'),
+ ('DSKC15000030','Customer account'),
+ ('DSKC15000031','Customer account'),
+ ('DSKC15000032','Customer account'),
+ ('DSKC15000033','Customer account'),
+ ('DSKC15000034','Customer account'),
+ ('DSKC15000035','Customer account'),
+ ('DSKC15000036','Customer account'),
+ ('DSKC15000037','Customer account'),
+ ('DSKC15000038','Customer account'),
+ ('DSKC15000039','Customer account'),
+ ('DSKC15000040','Customer account'),
+ ('DSKC15000041','Customer account'),
+ ('DSKC15000042','Customer account'),
+ ('DSKC15000043','Customer account'),
+ ('DSKC15000044','Customer account'),
+ ('DSKC15000045','Customer account'),
+ ('DSKC15000046','Customer account'),
+ ('DSKC15000047','Customer account'),
+ ('DSKC15000048','Customer account'),
+ ('DSKC15000049','Customer account'),
+ ('DSKC15000050','Customer account'),
+ ('DSKC15000051','Customer account'),
+ ('DSKC15000052','Customer account'),
+ ('DSKC15000053','Customer account'),
+ ('DSKC15000054','Customer account');
+INSERT INTO `accounts` (`aid`,`type`) VALUES 
+ ('DSKC15000055','Customer account'),
+ ('DSKC15000056','Customer account'),
+ ('DSKC15000057','Customer account'),
+ ('DSKC15000058','Customer account'),
+ ('DSKC15000059','Customer account'),
+ ('DSKC15000060','Customer account'),
+ ('DSKC15000061','Customer account'),
+ ('DSKC15000062','Customer account'),
+ ('DSKC15000063','Customer account'),
+ ('DSKC15000064','Customer account'),
+ ('DSKC15000065','Customer account'),
+ ('DSKC15000066','Customer account'),
+ ('DSKC15000067','Customer account'),
+ ('DSKC15000068','Customer account'),
+ ('DSKC15000069','Customer account'),
+ ('DSKC15000070','Customer account'),
+ ('DSKC15000071','Customer account'),
+ ('DSKC15000072','Customer account'),
+ ('DSKC15000073','Customer account'),
+ ('DSKC15000074','Customer account'),
+ ('DSKC15000075','Customer account'),
+ ('DSKC15000076','Customer account'),
+ ('DSKC15000077','Customer account'),
+ ('DSKC15000078','Customer account'),
+ ('DSKC15000079','Customer account'),
+ ('DSKC15000080','Customer account'),
+ ('DSKC15000081','Customer account');
+INSERT INTO `accounts` (`aid`,`type`) VALUES 
+ ('DSKC15000082','Customer account'),
+ ('DSKC15000083','Customer account'),
+ ('DSKC15000084','Customer account'),
+ ('DSKC15000085','Customer account'),
+ ('DSKC15000086','Customer account'),
+ ('DSKC15000087','Customer account'),
+ ('DSKC15000088','Customer account'),
+ ('DSKC15000089','Customer account'),
+ ('DSKC15000090','Customer account'),
+ ('DSKC15000091','Customer account'),
+ ('DSKC15000092','Customer account'),
+ ('DSKC15000093','Customer account'),
+ ('DSKC15000094','Customer account'),
+ ('DSKC15000095','Customer account'),
+ ('DSKC15000096','Customer account'),
+ ('DSKC15000097','Customer account'),
+ ('DSKC15000098','Customer account'),
+ ('DSKC15000099','Customer account'),
+ ('DSKC15000100','Customer account'),
+ ('DSKC15000101','Customer account'),
+ ('DSKC15000102','Customer account'),
+ ('DSKC15000103','Customer account'),
+ ('DSKC15000104','Customer account'),
+ ('DSKC15000105','Customer account'),
+ ('DSKC15000106','Customer account'),
+ ('DSKC15000107','Customer account'),
+ ('DSKC15000108','Customer account');
+INSERT INTO `accounts` (`aid`,`type`) VALUES 
+ ('DSKC15000109','Customer account'),
+ ('DSKC15000110','Customer account'),
+ ('DSKC15000111','Customer account'),
+ ('DSKC15000112','Customer account'),
+ ('DSKC15000113','Customer account'),
+ ('DSKC15000114','Customer account'),
+ ('DSKC15000115','Customer account'),
+ ('DSKC15000116','Customer account'),
+ ('DSKC15000117','Customer account'),
+ ('DSKC15000118','Customer account'),
+ ('DSKC15000119','Customer account'),
+ ('DSKC15000120','Customer account'),
+ ('DSKC15000121','Customer account'),
+ ('DSKC15000122','Customer account'),
+ ('DSKC15000123','Customer account'),
+ ('DSKC15000124','Customer account'),
+ ('DSKC15000125','Customer account'),
+ ('DSKC15000126','Customer account'),
+ ('DSKC15000127','Customer account'),
+ ('DSKC15000128','Customer account'),
+ ('DSKC15000129','Customer account'),
+ ('DSKC15000130','Customer account'),
+ ('DSKC15000131','Customer account'),
+ ('DSKC15000132','Customer account'),
+ ('DSKC15000133','Customer account'),
+ ('DSKH15000001','Cash account'),
+ ('DSKS15000001','Supplier account');
+INSERT INTO `accounts` (`aid`,`type`) VALUES 
+ ('DSKS15000002','Supplier account'),
+ ('DSKS15000003','Supplier account'),
+ ('DSKS15000004','Supplier account'),
+ ('DSKS15000005','Supplier account'),
+ ('DSKS15000006','Supplier account'),
+ ('DSKS15000007','Supplier account'),
+ ('DSKS15000008','Supplier account'),
+ ('DSKS15000009','Supplier account'),
+ ('DSKT15000001','Stock account');
+/*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`bank`
+--
+
+DROP TABLE IF EXISTS `bank`;
+CREATE TABLE `bank` (
+  `bid` varchar(45) NOT NULL,
+  `name` varchar(45) default NULL,
+  `branch` varchar(45) default NULL,
+  `contact_no` varchar(10) default NULL,
+  `email` varchar(45) default NULL,
+  `bank_combo` varchar(45) default NULL,
+  `status` varchar(45) default NULL,
+  PRIMARY KEY  (`bid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`bank`
+--
+
+/*!40000 ALTER TABLE `bank` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bank` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`cheque_details`
+--
+
+DROP TABLE IF EXISTS `cheque_details`;
+CREATE TABLE `cheque_details` (
+  `id` int(11) NOT NULL auto_increment,
+  `cheque_no` varchar(100) default NULL,
+  `customer` varchar(255) default NULL,
+  `date` date default NULL,
+  `amount` double default NULL,
+  `status` varchar(45) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dmk`.`cheque_details`
+--
+
+/*!40000 ALTER TABLE `cheque_details` DISABLE KEYS */;
+INSERT INTO `cheque_details` (`id`,`cheque_no`,`customer`,`date`,`amount`,`status`) VALUES 
+ (1,'sdfdss','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','2016-06-10',1234,'non'),
+ (2,'12345896','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','2016-06-12',5000,'non');
+/*!40000 ALTER TABLE `cheque_details` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`cheque_info`
+--
+
+DROP TABLE IF EXISTS `cheque_info`;
+CREATE TABLE `cheque_info` (
+  `id` int(11) NOT NULL auto_increment,
+  `cheque_no` varchar(100) default NULL,
+  `bank_bid` varchar(45) NOT NULL,
+  `date` date default NULL,
+  `amount` double default NULL,
+  `invoice_no` varchar(250) default NULL,
+  `status` varchar(45) default NULL,
+  `body` varchar(45) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `fk_cheque_info_bank1_idx` (`bank_bid`),
+  CONSTRAINT `fk_cheque_info_bank1` FOREIGN KEY (`bank_bid`) REFERENCES `bank` (`bid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`cheque_info`
+--
+
+/*!40000 ALTER TABLE `cheque_info` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cheque_info` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`current_stock`
+--
+
+DROP TABLE IF EXISTS `current_stock`;
+CREATE TABLE `current_stock` (
+  `id` int(11) NOT NULL auto_increment,
+  `date` date default NULL,
+  `qty` double(20,0) default NULL,
+  `amount` double(20,0) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`current_stock`
+--
+
+/*!40000 ALTER TABLE `current_stock` DISABLE KEYS */;
+INSERT INTO `current_stock` (`id`,`date`,`qty`,`amount`) VALUES 
+ (1,'2016-06-08',0,0),
+ (2,'2016-06-09',0,0),
+ (3,'2016-06-10',544,13600),
+ (4,'2016-06-11',433,10825),
+ (5,'2016-06-12',413,10325),
+ (6,'2016-06-14',413,10325),
+ (7,'2016-06-15',413,10325),
+ (8,'2016-06-16',413,10325);
+/*!40000 ALTER TABLE `current_stock` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE `customer` (
+  `cid` varchar(45) NOT NULL,
+  `fname` varchar(45) NOT NULL,
+  `address` varchar(45) NOT NULL,
+  `contact_no1` char(15) NOT NULL,
+  `contact_no2` char(15) default NULL,
+  `route` varchar(45) NOT NULL,
+  `customer_combo` varchar(250) default NULL,
+  `status` varchar(45) default NULL,
+  PRIMARY KEY  (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`customer`
+--
+
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000001','SAMARANAYAKE STORES','WARIYAPOLA','0728538255','null','01','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','Active'),
+ ('DSKC15000002','WMR STORES','BAMUNAKOTUWA','0372268122','null','01','DSKC15000002-WMR STORES BAMUNAKOTUWA','Active'),
+ ('DSKC15000003','JAYALATH','BAMUNAKOTUWA','0375788278','null','01','DSKC15000003-JAYALATH BAMUNAKOTUWA','Active'),
+ ('DSKC15000004','BANDARA','KADAPATHWEHERA','0725144385','null','01','DSKC15000004-BANDARA KADAPATHWEHERA','Active'),
+ ('DSKC15000005','AJITH STORES','HENEGEDARA','0728846155','null','01','DSKC15000005-AJITH STORES HENEGEDARA','Active'),
+ ('DSKC15000006','S D M STORES','HENEGEDARA','0772424585','null','01','DSKC15000006-S D M STORES HENEGEDARA','Active'),
+ ('DSKC15000007','SAS STORES','HENEGEDARA','0721136483','null','01','DSKC15000007-SAS STORES HENEGEDARA','Active'),
+ ('DSKC15000008','UDARA STORES','HENEGEDARA','0728948753','null','01','DSKC15000008-UDARA STORES HENEGEDARA','Active'),
+ ('DSKC15000009','ASIRI STORES','HENEGEDARA','0375614082','null','01','DSKC15000009-ASIRI STORES HENEGEDARA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000010','SONALI HOTEL','HENEGEDARA','0726464822','null','01','DSKC15000010-SONALI HOTEL HENEGEDARA','Active'),
+ ('DSKC15000011','KANTHI STORES','KEENAGASPITIYA','0771137444','null','01','DSKC15000011-KANTHI STORES KEENAGASPITIYA','Active'),
+ ('DSKC15000012','SADUNI STORES','KEENAGASPITIYA','0722709344','null','01','DSKC15000012-SADUNI STORES KEENAGASPITIYA','Active'),
+ ('DSKC15000013','N M S STORES','PITAWALA','0722097309','null','01','DSKC15000013-N M S STORES PITAWALA','Active'),
+ ('DSKC15000014','HERATH STORES','PITAWALA','0372050180','null','01','DSKC15000014-HERATH STORES PITAWALA','Active'),
+ ('DSKC15000015','MANJULA STORES','KANDAGOLLA','0375716959','null','01','DSKC15000015-MANJULA STORES KANDAGOLLA','Active'),
+ ('DSKC15000016','W E STORES','WEERAMBUGEDARA','0714879878','null','01','DSKC15000016-W E STORES WEERAMBUGEDARA','Active'),
+ ('DSKC15000017','R B STORES','DIYAGAMA','0375746636','null','02','DSKC15000017-R B STORES DIYAGAMA','Active'),
+ ('DSKC15000018','DISSANAYAKE STORES','UDAHENEGAMA','0715586512','null','02','DSKC15000018-DISSANAYAKE STORES UDAHENEGAMA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000019','R B STORES','RASNAYAKEPURA','0712167640','null','02','DSKC15000019-R B STORES RASNAYAKEPURA','Active'),
+ ('DSKC15000020','CO-OP RASNAYAKEPURA','RASNAYAKEPURA','0717024214','null','02','DSKC15000020-CO-OP RASNAYAKEPURA RASNAYAKEPURA','Active'),
+ ('DSKC15000021','PRABATH STORES','RASNAYAKEPURA','0000000000','null','02','DSKC15000021-PRABATH STORES RASNAYAKEPURA','Active'),
+ ('DSKC15000022','JAYATHISSA HOTEL','RASNAYAKEPURA','0711114590','null','02','DSKC15000022-JAYATHISSA HOTEL RASNAYAKEPURA','Active'),
+ ('DSKC15000023','ANITHA STORES','RASNAYAKEPURA','0776538523','null','02','DSKC15000023-ANITHA STORES RASNAYAKEPURA','Active'),
+ ('DSKC15000024','SENEVIRATHNA','RASNAYAKEPURA','0778919829','null','02','DSKC15000024-SENEVIRATHNA RASNAYAKEPURA','Active'),
+ ('DSKC15000025','RUWAN STORES','RASNAYAKEPURA','0710667878','null','02','DSKC15000025-RUWAN STORES RASNAYAKEPURA','Active'),
+ ('DSKC15000026','CHINTHAKA','RASNAYAKEPURA','0713405801','null','02','DSKC15000026-CHINTHAKA RASNAYAKEPURA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000027','WASANA STORES','RASNAYAKEPURA','0728454766','null','02','DSKC15000027-WASANA STORES RASNAYAKEPURA','Active'),
+ ('DSKC15000028','CHANDANA STORES','RASNAYAKEPURA','0723693617','null','02','DSKC15000028-CHANDANA STORES RASNAYAKEPURA','Active'),
+ ('DSKC15000029','UJITHA STORES','RASNAYAKEPURA','0712023128','null','02','DSKC15000029-UJITHA STORES RASNAYAKEPURA','Active'),
+ ('DSKC15000030','INDIKA STORES','NABADEVA','0777178992','null','02','DSKC15000030-INDIKA STORES NABADEVA','Active'),
+ ('DSKC15000031','WASANTHA STORES','KULEGAMA','0772405603','null','02','DSKC15000031-WASANTHA STORES KULEGAMA','Active'),
+ ('DSKC15000032','T G STORES','THISSOGEDARA','0774135756','null','02','DSKC15000032-T G STORES THISSOGEDARA ','Active'),
+ ('DSKC15000033','DIMUTHU STORES','OLUPALIYAWA','0375680330','null','02','DSKC15000033-DIMUTHU STORES OLUPALIYAWA','Active'),
+ ('DSKC15000034','VIJENAYAKE STORES','THISSOGEDARA','0779824169','null','02','DSKC15000034-VIJENAYAKE STORES THISSOGEDARA','Active'),
+ ('DSKC15000035','DISSANAYAKE STORES','OLUPALIYAWA','0723684838','null','02','DSKC15000035-DISSANAYAKE STORES OLUPALIYAWA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000036','ANURA STORES','KIRINDA','0775261002','null','02','DSKC15000036-ANURA STORES KIRINDA','Active'),
+ ('DSKC15000037','MALSITHA STORES','VITHIKULIYA','0772495523','null','03','DSKC15000037-MALSITHA STORES VITHIKULIYA','Active'),
+ ('DSKC15000038','SISILA STORES','RAMBUKANA','0776520200','null','03','DSKC15000038-SISILA STORES RAMBUKANA','Active'),
+ ('DSKC15000039','MADUSHANI','PINTHALIYA','0000000000','null','03','DSKC15000039-MADUSHANI PINTHALIYA','Active'),
+ ('DSKC15000040','YEHEN STORES','PINTHALIYA','0723495639','null','03','DSKC15000040-YEHEN STORES PINTHALIYA','Active'),
+ ('DSKC15000041','RANJITH STORES','AULEGAMA','0375736638','null','03','DSKC15000041-RANJITH STORES AULEGAMA','Active'),
+ ('DSKC15000042','NANDANA STORES','AULEGAMA','0775301556','null','03','DSKC15000042-NANDANA STORES AULEGAMA','Active'),
+ ('DSKC15000043','SHAN STORES','KUMBUKWEWA','0776747851','null','03','DSKC15000043-SHAN STORES KUMBUKWEWA','Active'),
+ ('DSKC15000044','CHAMINDA STORES','KUMBUKWEWA','0000000000','null','03','DSKC15000044-CHAMINDA STORES KUMBUKWEWA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000045','BANDULA STORES','KUMBUKWEWA','0774358858','null','03','DSKC15000045-BANDULA STORES KUMBUKWEWA','Active'),
+ ('DSKC15000046','ALUTHKADE','HALMILLAWA','0718660167','null','03','DSKC15000046-ALUTHKADE HALMILLAWA','Active'),
+ ('DSKC15000047','SUPUN STORES','MANAPAHA','0774078243','null','03','DSKC15000047-SUPUN STORES MANAPAHA','Active'),
+ ('DSKC15000048','VIJESINHE STORES','DIULEGODA','0771809075','null','03','DSKC15000048-VIJESINHE STORES DIULEGODA','Active'),
+ ('DSKC15000049','ADHIKARI STORES','DIULEGODA','0789391317','null','03','DSKC15000049-ADHIKARI STORES DIULEGODA','Active'),
+ ('DSKC15000050','DANUJAYA STORES','VASIWEWA','0767017104','null','03','DSKC15000050-DANUJAYA STORES VASIWEWA','Active'),
+ ('DSKC15000051','BANDULA STORES','VASIWEWA','0000000000','null','03','DSKC15000051-BANDULA STORES VASIWEWA','Active'),
+ ('DSKC15000052','HERATH STORES','KIRIDIGALLA','0772777802','null','03','DSKC15000052-HERATH STORES KIRIDIGALLA','Active'),
+ ('DSKC15000053','MAHINDA STORES','THUMBULLA','0725601095','null','04','DSKC15000053-MAHINDA STORES THUMBULLA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000054','THILAKARATHNE STORES','KOTAWEHERA','0718222428','null','04','DSKC15000054-THILAKARATHNE STORES KOTAWEHERA','Active'),
+ ('DSKC15000055','EKENAYAKE STORES','KOTAWEHERA','0375684136','null','04','DSKC15000055-EKENAYAKE STORES KOTAWEHERA','Active'),
+ ('DSKC15000056','RATHNAYAKE STORES','KOTAWEHERA','0729339637','null','04','DSKC15000056-RATHNAYAKE STORES KOTAWEHERA','Active'),
+ ('DSKC15000057','DARMASENA STORES','THAMBAROBUWA','0375728055','null','04','DSKC15000057-DARMASENA STORES THAMBAROBUWA','Active'),
+ ('DSKC15000058','PAVITHRA STORES','THAMBAROBUWA','0728022254','null','04','DSKC15000058-PAVITHRA STORES THAMBAROBUWA','Active'),
+ ('DSKC15000059','JAYASINGHE STORES','KUBUKWEWA','0000000000','null','04','DSKC15000059-JAYASINGHE STORES KUBUKWEWA','Active'),
+ ('DSKC15000060','ARIYARATHNE STORES','KUMBUKWEWA','0711114725','null','04','DSKC15000060-ARIYARATHNE STORES KUMBUKWEWA','Active'),
+ ('DSKC15000061','WEERAWARDANA STORES','KUBUKWEWA','0713366839','null','04','DSKC15000061-WEERAWARDANA STORES KUBUKWEWA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000062','CHANDANA STORES','KUBUKWEWA','0719767752','null','04','DSKC15000062-CHANDANA STORES KUBUKWEWA ','Active'),
+ ('DSKC15000063','SIRIL STORES','DIGANNEWA','0713936334','null','04','DSKC15000063-SIRIL STORES DIGANNEWA','Active'),
+ ('DSKC15000064','AKASH STORES','DIGANNEWA','0719113248','null','04','DSKC15000064-AKASH STORES DIGANNEWA','Active'),
+ ('DSKC15000065','THILAKA STORES','DIGANNEWA','0713197469','null','04','DSKC15000065-THILAKA STORES DIGANNEWA','Active'),
+ ('DSKC15000066','DISSANAYAKE STORES','DIULEPITIYA','0712648466','null','04','DSKC15000066-DISSANAYAKE STORES DIULEPITIYA','Active'),
+ ('DSKC15000067','T B STORES','DIULEPITIYA','0375610675','null','04','DSKC15000067-T B STORES DIULEPITIYA','Active'),
+ ('DSKC15000068','PREMARATHNE STORES','MEEWALLAWA','0712800361','null','04','DSKC15000068-PREMARATHNE STORES MEEWALLAWA','Active'),
+ ('DSKC15000069','JAYANTHA STORES','MEEWALLAWA','0712280357','null','04','DSKC15000069-JAYANTHA STORES MEEWALLAWA','Active'),
+ ('DSKC15000070','BAKERY KADE','MEEWALLAWA','0715281654','null','04','DSKC15000070-BAKERY KADE MEEWALLAWA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000071','ABERATHNE STORES','MEEWALLAWA','0711077060','null','04','DSKC15000071-ABERATHNE STORES MEEWALLAWA','Active'),
+ ('DSKC15000072','W M P STORES','ELAGAMMILLAWA','0777792167','null','04','DSKC15000072-W M P STORES ELAGAMMILLAWA','Active'),
+ ('DSKC15000073','ISHARA STORES','WADURESSA','0725168069','null','05','DSKC15000073-ISHARA STORES WADURESSA','Active'),
+ ('DSKC15000074','GIMSARANI STORES','WADURASSA','0773055292','null','05','DSKC15000074-GIMSARANI STORES WADURASSA','Active'),
+ ('DSKC15000075','DESHAN STORES','WADURASSA','0375663786','null','05','DSKC15000075-DESHAN STORES WADURASSA','Active'),
+ ('DSKC15000076','UMET STORES','WADURASSA','0000000000','null','05','DSKC15000076-UMET STORES WADURASSA','Active'),
+ ('DSKC15000077','NUWAN STORES','HETTIPOLA','0766668089','null','05','DSKC15000077-NUWAN STORES HETTIPOLA','Active'),
+ ('DSKC15000078','SENAYA STORES','HETTIPOLA','0767086501','null','05','DSKC15000078-SENAYA STORES HETTIPOLA','Active'),
+ ('DSKC15000079','AJITH STORES','HETTIPOLA','0724713810','null','05','DSKC15000079-AJITH STORES HETTIPOLA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000080','RAMALKA STORES','HETTIPOLA','0725796698','null','05','DSKC15000080-RAMALKA STORES HETTIPOLA','Active'),
+ ('DSKC15000081','MIHIRI STORES','HETTIPOLA','0777076713','null','05','DSKC15000081-MIHIRI STORES HETTIPOLA','Active'),
+ ('DSKC15000082','GAYASHAN HOTEL','NUGAWELA','0789090694','null','05','DSKC15000082-GAYASHAN HOTEL NUGAWELA','Active'),
+ ('DSKC15000083','DARSHANA STORES','NUGAWELA','0717550850','null','05','DSKC15000083-DARSHANA STORES NUGAWELA','Active'),
+ ('DSKC15000084','SHEHAN HOTEL','HUNUGAMA','0372293632','null','05','DSKC15000084-SHEHAN HOTEL HUNUGAMA','Active'),
+ ('DSKC15000085','S M STORES','BANDARAKOSWATTA','0723850234','null','05','DSKC15000085-S M STORES BANDARAKOSWATTA','Active'),
+ ('DSKC15000086','WARNASOORIYA STORES','HIDAGOLLA','0756262441','null','05','DSKC15000086-WARNASOORIYA STORES HIDAGOLLA','Active'),
+ ('DSKC15000087','CHAMILA STORES','RAMBAWEWA','0372267705','null','05','DSKC15000087-CHAMILA STORES RAMBAWEWA','Active'),
+ ('DSKC15000088','SUJATHA STORES','KURANAGAMA','0722910857','null','05','DSKC15000088-SUJATHA STORES KURANAGAMA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000089','KUMARI STORES','MARIYAGODA','0722116306','null','06','DSKC15000089-KUMARI STORES MARIYAGODA','Active'),
+ ('DSKC15000090','DEVINDI STORES','THALAKOLAWEWA','0716921271','null','06','DSKC15000090-DEVINDI STORES THALAKOLAWEWA','Active'),
+ ('DSKC15000091','RATHNA STORES','KARAMBE','0717079360','null','06','DSKC15000091-RATHNA STORES KARAMBE','Active'),
+ ('DSKC15000092','NIMAL STORES','KALEGAMA','0000000000','null','06','DSKC15000092-NIMAL STORES KALEGAMA','Active'),
+ ('DSKC15000093','CO-OP KALEGAMA','KALEGAMA','0375749118','null','06','DSKC15000093-CO-OP KALEGAMA KALEGAMA','Active'),
+ ('DSKC15000094','K S STORES','THALGASWEWA','0711007178','null','06','DSKC15000094-K S STORES THALGASWEWA','Active'),
+ ('DSKC15000095','LAKMALI STORES','THALGASWEWA','0771358401','null','06','DSKC15000095-LAKMALI STORES THALGASWEWA','Active'),
+ ('DSKC15000096','GUNAPALA STORES','MARUNGODA','0722533538','null','06','DSKC15000096-GUNAPALA STORES MARUNGODA','Active'),
+ ('DSKC15000097','WIJESINGHE STORES','MARUNGODA','0771690023','null','06','DSKC15000097-WIJESINGHE STORES MARUNGODA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000098','WIJEKOON STORES','MARUNGODA','0722873962','null','06','DSKC15000098-WIJEKOON STORES MARUNGODA','Active'),
+ ('DSKC15000099','INDRANI STORES','THALGASWEWA','0773807763','null','06','DSKC15000099-INDRANI STORES THALGASWEWA','Active'),
+ ('DSKC15000100','AJITH STORES','LABUGALA','0773802201','null','06','DSKC15000100-AJITH STORES LABUGALA','Active'),
+ ('DSKC15000101','KEERTHI STORES','MARUNGODA','0325680177','null','06','DSKC15000101-KEERTHI STORES MARUNGODA','Active'),
+ ('DSKC15000102','VIJITHA STORES','MARUNGODA','0712129988','null','06','DSKC15000102-VIJITHA STORES MARUNGODA','Active'),
+ ('DSKC15000103','JAYATHILAKA STORES','VELEWEWA','0323299213','null','06','DSKC15000103-JAYATHILAKA STORES VELEWEWA','Active'),
+ ('DSKC15000104','SENEVIRATHNE STORES','VELEWEWA','0323323407','null','06','DSKC15000104-SENEVIRATHNE STORES VELEWEWA','Active'),
+ ('DSKC15000105','BANADARA STORES','MULLEGAMA','0713132500','null','06','DSKC15000105-BANADARA STORES MULLEGAMA','Active'),
+ ('DSKC15000106','THUSHARA STORES','NAWAGATHTHEGAMA','0712737156','null','06','DSKC15000106-THUSHARA STORES NAWAGATHTHEGAMA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000107','MANEL STORES','NAWAGATHTHEGAMA','0714239398','null','06','DSKC15000107-MANEL STORES NAWAGATHTHEGAMA','Active'),
+ ('DSKC15000108','THEMIYA STORES','NAWAGATHTHEGAMA','0712650435','null','06','DSKC15000108-THEMIYA STORES NAWAGATHTHEGAMA','Active'),
+ ('DSKC15000109','RANJEE HOTEL','WATHTHEGEDARA','0787133411','null','07','DSKC15000109-RANJEE HOTEL WATHTHEGEDARA','Active'),
+ ('DSKC15000110','HALAMBAWATTA STORES','HALAMBAWATTA','0716551411','null','07','DSKC15000110-HALAMBAWATTA STORES HALAMBAWATTA','Active'),
+ ('DSKC15000111','PANNAWA GROCERY','PANNAWA','0726358548','null','07','DSKC15000111-PANNAWA GROCERY PANNAWA','Active'),
+ ('DSKC15000112','L G PANNAWA','PANNAWA','0774230200','null','07','DSKC15000112-L G PANNAWA PANNAWA','Active'),
+ ('DSKC15000113','HUSSIAN STORES 1','LOLANWEWA','0726105343','null','07','DSKC15000113-HUSSIAN STORES 1 LOLANWEWA','Active'),
+ ('DSKC15000114','HUSSIAN STORES 2','LOLANWEWA','0726105343','null','07','DSKC15000114-HUSSIAN STORES 2 LOLANWEWA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000115','LAKMAL STORES','LOLANWEWA','0724416829','null','07','DSKC15000115-LAKMAL STORES LOLANWEWA','Active'),
+ ('DSKC15000116','ABDULLA STORES','LOLANWEWA','0776412164','null','07','DSKC15000116-ABDULLA STORES LOLANWEWA','Active'),
+ ('DSKC15000117','REESHA HOTEL','LOLANWEWA','0719852128','null','07','DSKC15000117-REESHA HOTEL LOLANWEWA','Active'),
+ ('DSKC15000118','MANJULA STORES','GOOWAMULLA','0728458528','null','08','DSKC15000118-MANJULA STORES GOOWAMULLA','Active'),
+ ('DSKC15000119','THENNAKOON STORES','GOWAMULLA','0728077163','null','08','DSKC15000119-THENNAKOON STORES GOWAMULLA','Active'),
+ ('DSKC15000120','C O M STORES','NIKAWERATIYA','0772629371','null','08','DSKC15000120-C O M STORES NIKAWERATIYA','Active'),
+ ('DSKC15000121','SAMURDHI STORES','GALAPITIYAGAMA','0774336119','null','08','DSKC15000121-SAMURDHI STORES GALAPITIYAGAMA','Active'),
+ ('DSKC15000122','SEETHA STORES','GALAPITIYAGAMA','0000000000','null','08','DSKC15000122-SEETHA STORES GALAPITIYAGAMA','Active'),
+ ('DSKC15000123','ALUTHKADAE','HAWANPALASSA','0779448589','null','08','DSKC15000123-ALUTHKADAE HAWANPALASSA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000124','JAYALATH STORES','SUDEERAGAMA','0000000000','null','08','DSKC15000124-JAYALATH STORES SUDEERAGAMA','Active'),
+ ('DSKC15000125','ATHAPATHTHU STORES','KOTAWEHERA','0000000000','null','08','DSKC15000125-ATHAPATHTHU STORES KOTAWEHERA','Active'),
+ ('DSKC15000126','ADHIKARI STORES','KOTAWEHERA','0000000000','null','08','DSKC15000126-ADHIKARI STORES KOTAWEHERA','Active'),
+ ('DSKC15000127','SURANGA STORES','MONNAKULAMA','0723319512','null','08','DSKC15000127-SURANGA STORES MONNAKULAMA','Active'),
+ ('DSKC15000128','RANMINI STORES','MONNAKULAMA','0716677929','null','08','DSKC15000128-RANMINI STORES MONNAKULAMA','Active'),
+ ('DSKC15000129','VIMAL STORES','PALUGASHANDIYA','0702405757','null','08','DSKC15000129-VIMAL STORES PALUGASHANDIYA','Active'),
+ ('DSKC15000130','DILSHAN STORES','PALUGASHANDIYA','028353984','null','08','DSKC15000130-DILSHAN STORES PALUGASHANDIYA','Active'),
+ ('DSKC15000131','RASANJALEE STORES','PALUGASHANDIYA','0725933254','null','08','DSKC15000131-RASANJALEE STORES PALUGASHANDIYA','Active');
+INSERT INTO `customer` (`cid`,`fname`,`address`,`contact_no1`,`contact_no2`,`route`,`customer_combo`,`status`) VALUES 
+ ('DSKC15000132','MAHINDA STORES','PALUGASHANDIYA','0766901426','null','08','DSKC15000132-MAHINDA STORES PALUGASHANDIYA','Active'),
+ ('DSKC15000133','H M T ANAMADUWA','ANAMADUWA','0712483682','null','08','DSKC15000133-H M T ANAMADUWA ANAMADUWA','Active');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`customer_credits`
+--
+
+DROP TABLE IF EXISTS `customer_credits`;
+CREATE TABLE `customer_credits` (
+  `id` int(11) NOT NULL auto_increment,
+  `date` date default NULL,
+  `invoice_no` varchar(255) default NULL,
+  `customer` varchar(255) default NULL,
+  `amount` double(50,0) default NULL,
+  `route` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dmk`.`customer_credits`
+--
+
+/*!40000 ALTER TABLE `customer_credits` DISABLE KEYS */;
+INSERT INTO `customer_credits` (`id`,`date`,`invoice_no`,`customer`,`amount`,`route`) VALUES 
+ (1,'2016-06-10','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','DSKI15000001',70,'01'),
+ (2,'2016-06-10','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','DSKI15000009',9300,'01'),
+ (3,'2016-06-10','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','DSKI15000010',34800,'01'),
+ (4,'2016-06-10','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','DSKI15000011',2470,'01'),
+ (5,'2016-06-10','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','DSKI15000013',19650,'01'),
+ (6,'2016-06-11','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','DSKI15000017',990,'01'),
+ (7,'2016-06-11','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','DSKI15000018',1000,'01'),
+ (8,'2016-06-11','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','DSKI15000027',840,'01'),
+ (9,'2016-06-11','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','DSKI15000028',1250,'01'),
+ (10,'2016-06-12','DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA','DSKI15000029',340,'01'),
+ (11,'2016-06-12','DSKC15000005-AJITH STORES HENEGEDARA','DSKI15000030',3200,'01');
+/*!40000 ALTER TABLE `customer_credits` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`customer_payments`
+--
+
+DROP TABLE IF EXISTS `customer_payments`;
+CREATE TABLE `customer_payments` (
+  `id` int(11) NOT NULL auto_increment,
+  `invoice_no` varchar(45) NOT NULL,
+  `amount` double default NULL,
+  `method` varchar(45) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `fk_customer_payments_invoice1_idx` (`invoice_no`),
+  CONSTRAINT `fk_customer_payments_invoice1` FOREIGN KEY (`invoice_no`) REFERENCES `invoice` (`invoice_no`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`customer_payments`
+--
+
+/*!40000 ALTER TABLE `customer_payments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer_payments` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`grn`
+--
+
+DROP TABLE IF EXISTS `grn`;
+CREATE TABLE `grn` (
+  `grn_no` varchar(45) NOT NULL,
+  `iid` varchar(45) NOT NULL,
+  `qty` double default NULL,
+  `amount` double default NULL,
+  PRIMARY KEY  (`grn_no`,`iid`),
+  KEY `fk_grn_items1_idx` (`iid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`grn`
+--
+
+/*!40000 ALTER TABLE `grn` DISABLE KEYS */;
+/*!40000 ALTER TABLE `grn` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`grn_info`
+--
+
+DROP TABLE IF EXISTS `grn_info`;
+CREATE TABLE `grn_info` (
+  `grn_no` varchar(45) NOT NULL,
+  `date` date default NULL,
+  `item_count` double default NULL,
+  `total_amount` double default NULL,
+  `sid` varchar(45) NOT NULL,
+  PRIMARY KEY  (`grn_no`,`sid`),
+  KEY `fk_grn_has_supplier_supplier1_idx` (`sid`),
+  KEY `fk_grn_has_supplier_grn1_idx` (`grn_no`),
+  CONSTRAINT `fk_grn_has_supplier_grn1` FOREIGN KEY (`grn_no`) REFERENCES `grn` (`grn_no`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_grn_has_supplier_supplier1` FOREIGN KEY (`sid`) REFERENCES `supplier` (`sid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`grn_info`
+--
+
+/*!40000 ALTER TABLE `grn_info` DISABLE KEYS */;
+/*!40000 ALTER TABLE `grn_info` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`invoice`
+--
+
+DROP TABLE IF EXISTS `invoice`;
+CREATE TABLE `invoice` (
+  `invoice_no` varchar(45) NOT NULL,
+  `iid` varchar(45) NOT NULL,
+  `item_name` varchar(255) default NULL,
+  `unit_price` double(10,0) default NULL,
+  `qty` double(10,0) NOT NULL default '0',
+  `netamount` double NOT NULL default '0',
+  `date` date default NULL,
+  PRIMARY KEY  (`invoice_no`,`iid`),
+  KEY `fk_invoice_items1_idx` (`iid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`invoice`
+--
+
+/*!40000 ALTER TABLE `invoice` DISABLE KEYS */;
+INSERT INTO `invoice` (`invoice_no`,`iid`,`item_name`,`unit_price`,`qty`,`netamount`,`date`) VALUES 
+ ('DSKI15000001','null',NULL,NULL,2,500,NULL),
+ ('DSKI15000002','null',NULL,NULL,10,250,NULL),
+ ('DSKI15000003','null',NULL,NULL,2,50,NULL),
+ ('DSKI15000004','null',NULL,NULL,5,125,NULL),
+ ('DSKI15000005','null',NULL,NULL,5,125,NULL),
+ ('DSKI15000006','null',NULL,NULL,3,69,NULL),
+ ('DSKI15000007','null',NULL,NULL,5,125,NULL),
+ ('DSKI15000008','null',NULL,NULL,1,50,NULL),
+ ('DSKI15000009','null',NULL,NULL,5,10000,NULL),
+ ('DSKI15000010','null',NULL,NULL,5,40000,NULL),
+ ('DSKI15000011','null',NULL,NULL,5,2500,NULL),
+ ('DSKI15000012','null',NULL,NULL,5,1250,NULL),
+ ('DSKI15000013','null',NULL,NULL,8,20000,NULL),
+ ('DSKI15000014','null',NULL,NULL,2,500,NULL),
+ ('DSKI15000015','00145',NULL,NULL,2,100,NULL),
+ ('DSKI15000015','00146',NULL,NULL,6,150,NULL),
+ ('DSKI15000016','00145','SOORYA MATCH',25,2,50,'2016-06-11'),
+ ('DSKI15000017','00145','SOORYA MATCH',50,20,1000,'2016-06-11'),
+ ('DSKI15000017','00146','MATCHES',50,20,1000,'2016-06-11'),
+ ('DSKI15000017','4','44',NULL,0,0,NULL);
+INSERT INTO `invoice` (`invoice_no`,`iid`,`item_name`,`unit_price`,`qty`,`netamount`,`date`) VALUES 
+ ('DSKI15000017','hh','hh',NULL,0,0,NULL),
+ ('DSKI15000017','jhvv','kls',NULL,0,0,NULL),
+ ('DSKI15000017','kjl','ssww',NULL,0,0,NULL),
+ ('DSKI15000017','kshs','jhbhv',NULL,0,0,NULL),
+ ('DSKI15000017','sjhjb','sss',NULL,0,0,NULL),
+ ('DSKI15000018','00145','SOORYA MATCH',30,5,150,'2016-06-11'),
+ ('DSKI15000018','00146','MATCHES',100,10,1000,'2016-06-11'),
+ ('DSKI15000019','00145','SOORYA MATCH',50,2,100,'2016-06-11'),
+ ('DSKI15000019','00146','MATCHES',52,2,104,'2016-06-11'),
+ ('DSKI15000020','00145','SOORYA MATCH',24,2,48,'2016-06-11'),
+ ('DSKI15000020','00146','MATCHES',42,2,84,'2016-06-11'),
+ ('DSKI15000021','00145','SOORYA MATCH',11,1,11,'2016-06-11'),
+ ('DSKI15000021','00146','MATCHES',21,1,21,'2016-06-11'),
+ ('DSKI15000022','00145','SOORYA MATCH',11,2,22,'2016-06-11'),
+ ('DSKI15000022','00146','MATCHES',22,2,44,'2016-06-11'),
+ ('DSKI15000023','00146','MATCHES',20,5,100,'2016-06-11'),
+ ('DSKI15000024','00145','SOORYA MATCH',2800,2,5600,'2016-06-11');
+INSERT INTO `invoice` (`invoice_no`,`iid`,`item_name`,`unit_price`,`qty`,`netamount`,`date`) VALUES 
+ ('DSKI15000024','00146','MATCHES',2500,5,12500,'2016-06-11'),
+ ('DSKI15000025','00145','SOORYA MATCH',520,5,2600,'2016-06-11'),
+ ('DSKI15000025','00146','MATCHES',56,6,336,'2016-06-11'),
+ ('DSKI15000026','00145','SOORYA MATCH',20,2,40,'2016-06-11'),
+ ('DSKI15000026','00146','MATCHES',50,2,100,'2016-06-11'),
+ ('DSKI15000027','00145','SOORYA MATCH',520,5,2600,'2016-06-11'),
+ ('DSKI15000027','00146','MATCHES',520,5,2600,'2016-06-11'),
+ ('DSKI15000028','00145','SOORYA MATCH',500,5,2500,'2016-06-11'),
+ ('DSKI15000029','00145','SOORYA MATCH',250,2,500,'2016-06-12'),
+ ('DSKI15000030','00145','SOORYA MATCH',5000,2,10000,'2016-06-12'),
+ ('DSKI15000030','00146','MATCHES',6000,20,120000,'2016-06-12'),
+ ('DSKI15000031','00146','MATCHES',250,2,500,'2016-06-12');
+/*!40000 ALTER TABLE `invoice` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`invoice_info`
+--
+
+DROP TABLE IF EXISTS `invoice_info`;
+CREATE TABLE `invoice_info` (
+  `invoice_no` varchar(45) NOT NULL,
+  `date` date default NULL,
+  `item_count` double default NULL,
+  `total_amount` double default NULL,
+  `cid` varchar(45) NOT NULL,
+  `cash` double default NULL,
+  `credit` double default NULL,
+  `cheque` double default NULL,
+  `payment_method` varchar(10) default NULL,
+  `invoice_type` varchar(10) default NULL,
+  `route` varchar(255) default NULL,
+  `cost` double(45,0) default NULL,
+  PRIMARY KEY  (`invoice_no`,`cid`),
+  KEY `fk_invoice_has_customer_customer1_idx` (`cid`),
+  KEY `fk_invoice_has_customer_invoice1_idx` (`invoice_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`invoice_info`
+--
+
+/*!40000 ALTER TABLE `invoice_info` DISABLE KEYS */;
+INSERT INTO `invoice_info` (`invoice_no`,`date`,`item_count`,`total_amount`,`cid`,`cash`,`credit`,`cheque`,`payment_method`,`invoice_type`,`route`,`cost`) VALUES 
+ ('DSKI15000001','2016-06-10',2,440,'DSKC15000001',500,0,0,'1','3','01',250),
+ ('DSKI15000002','2016-06-10',3,78,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',100,0,0,'1','1','01',250),
+ ('DSKI15000003','2016-06-10',2,50,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',100,0,0,'1','1','01',250),
+ ('DSKI15000004','2016-06-10',5,125,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',200,0,0,'1','1','01',250),
+ ('DSKI15000005','2016-06-10',5,125,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',200,0,0,'1','1','01',250),
+ ('DSKI15000006','2016-06-10',3,69,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',70,0,0,'1','1','01',250),
+ ('DSKI15000007','2016-06-10',5,125,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',200,0,0,'1','1','01',250),
+ ('DSKI15000008','2016-06-10',1,50,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',100,0,0,'1','1','01',250),
+ ('DSKI15000009','2016-06-10',5,10000,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',200,9300,500,'7','1','01',250),
+ ('DSKI15000010','2016-06-10',5,40000,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',200,34800,5000,'7','1','01',250);
+INSERT INTO `invoice_info` (`invoice_no`,`date`,`item_count`,`total_amount`,`cid`,`cash`,`credit`,`cheque`,`payment_method`,`invoice_type`,`route`,`cost`) VALUES 
+ ('DSKI15000011','2016-06-10',5,2500,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',10,2470,20,'7','1','01',250),
+ ('DSKI15000012','2016-06-10',5,1250,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',2000,0,0,'1','1','01',250),
+ ('DSKI15000013','2016-06-10',8,20000,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',250,19650,100,'7','1','01',250),
+ ('DSKI15000014','2016-06-10',2,500,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',800,0,0,'1','1','01',250),
+ ('DSKI15000015','2016-06-10',8,250,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',500,0,0,'1','1','01',250),
+ ('DSKI15000016','2016-06-11',2,40,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',50,0,0,'1','2','01',250),
+ ('DSKI15000017','2016-06-11',40,1990,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',1000,990,0,'4','2','01',250),
+ ('DSKI15000018','2016-06-11',15,1130,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',130,1000,0,'4','2','01',250),
+ ('DSKI15000019','2016-06-11',4,142,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',200,0,0,'1','3','01',250);
+INSERT INTO `invoice_info` (`invoice_no`,`date`,`item_count`,`total_amount`,`cid`,`cash`,`credit`,`cheque`,`payment_method`,`invoice_type`,`route`,`cost`) VALUES 
+ ('DSKI15000020','2016-06-11',4,132,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',200,0,0,'1','1','01',250),
+ ('DSKI15000021','2016-06-11',2,32,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',1222,0,0,'1','1','01',250),
+ ('DSKI15000022','2016-06-11',4,66,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',100,0,0,'1','1','01',250),
+ ('DSKI15000023','2016-06-11',5,100,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',200,0,0,'1','1','01',250),
+ ('DSKI15000024','2016-06-11',7,18037,'DSKC15000004-BANDARA KADAPATHWEHERA',20000,0,0,'1','2','01',250),
+ ('DSKI15000025','2016-06-11',11,2876,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',3000,0,0,'1','2','01',250),
+ ('DSKI15000026','2016-06-11',4,130,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',150,0,0,'1','2','01',250),
+ ('DSKI15000027','2016-06-11',10,5040,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',200,840,4000,'7','2','01',250),
+ ('DSKI15000028','2016-06-11',5,2450,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',200,1250,1000,'7','2','01',250);
+INSERT INTO `invoice_info` (`invoice_no`,`date`,`item_count`,`total_amount`,`cid`,`cash`,`credit`,`cheque`,`payment_method`,`invoice_type`,`route`,`cost`) VALUES 
+ ('DSKI15000029','2016-06-12',2,450,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',10,340,100,'7','2','01',250),
+ ('DSKI15000030','2016-06-12',22,129200,'DSKC15000005-AJITH STORES HENEGEDARA',10000,69200,50000,'7','4','01',250),
+ ('DSKI15000031','2016-06-12',2,490,'DSKC15000001-SAMARANAYAKE STORES WARIYAPOLA',500,0,0,'1','2','01',250);
+/*!40000 ALTER TABLE `invoice_info` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`items`
+--
+
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE `items` (
+  `iid` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `status` varchar(45) default NULL,
+  `item_combo` varchar(250) default NULL,
+  PRIMARY KEY  (`iid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`items`
+--
+
+/*!40000 ALTER TABLE `items` DISABLE KEYS */;
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150001','ANCHOR 250g','Active','DSKI150001-ANCHOR 250g'),
+ ('DSKI150002','ANCHOR 400g','Active','DSKI150002-ANCHOR 400g'),
+ ('DSKI150003','ANCHOR 1kg','Active','DSKI150003-ANCHOR 1kg'),
+ ('DSKI150004','RATTHI 250g','Active','DSKI150004-RATTHI 250g'),
+ ('DSKI150005','RATTHI 400g','Active','DSKI150005-RATTHI 400g'),
+ ('DSKI150006','RATTHI 1kg','Active','DSKI150006-RATTHI 1kg'),
+ ('DSKI150007','RATTHI SH.70/=','Active','DSKI150007-RATTHI SH.70/='),
+ ('DSKI150008','RATTHI SH.130/=','Active','DSKI150008-RATTHI SH.130/='),
+ ('DSKI150009','NESPRAY 400g','Active','DSKI150009-NESPRAY 400g'),
+ ('DSKI150010','NESPRAY 1kg','Active','DSKI150010-NESPRAY 1kg'),
+ ('DSKI150011','NESPRAY SH.18/=','Active','DSKI150011-NESPRAY SH.18/=0'),
+ ('DSKI150012','MALIBAN 400g','Active','DSKI150012-MALIBAN 400g'),
+ ('DSKI150013','MALIBAN 1kg','Active','DSKI150013-MALIBAN 1kg'),
+ ('DSKI150014','MALIBAN SH.18/=','Active','DSKI150014-MALIBAN SH.18/='),
+ ('DSKI150015','MALIBAN SH.65/=','Active','DSKI150015-MALIBAN SH.65/=');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150016','MALIBAN SH.125/=','Active','DSKI150016-MALIBAN SH.125/='),
+ ('DSKI150017','NESTAMOLT 250g','Active','DSKI150017-NESTAMOLT 250g'),
+ ('DSKI150018','NESTAMOLT 400g','Active','DSKI150018-NESTAMOLT 400g'),
+ ('DSKI150019','NESTAMOLT WEL 400g','Active','DSKI150019-NESTAMOLT WELFARE 400g'),
+ ('DSKI150020','NESTAMOLT SH.25/=','Active','DSKI150020-NESTAMOLT SH.25/='),
+ ('DSKI150021','VIVA 400g','Active','DSKI150021-VIVA 400g'),
+ ('DSKI150022','VIVA WEL 400g','Active','DSKI150022-VIVA WELFARE 400g'),
+ ('DSKI150023','VIVA SH.25/=','Active','DSKI150023-VIVA SH.25/='),
+ ('DSKI150024','SUNLIGHT SOAP','Active','DSKI150024-SUNLIGHT'),
+ ('DSKI150025','LIFE BOUY SOAP','Active','DSKI150025-LIFE BOUY SOAP'),
+ ('DSKI150026','KHOMBA SOAP','Active','DSKI150026-KHOMBO SOAP'),
+ ('DSKI150027','RANI SOAP','Active','DSKI150027-RANI SOAP'),
+ ('DSKI150028','VENIVAL','Active','DSKI150028-VENIVAL'),
+ ('DSKI150029','VELVET SOAP','Active','DSKI150029-VELVET SOAP'),
+ ('DSKI150030','LUX SOAP','Active','DSKI150030-LUX SOAP');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150031','DETOL SOAP','Active','DSKI150031-DETOL SOAP'),
+ ('DSKI150032','DELMA SOAP (S/A)','Active','DSKI150032-DELMA SOAP (S/A)'),
+ ('DSKI150033','DELMA LIGHT SOAP','Active','DSKI150033-DELMA LIGHT SOAP'),
+ ('DSKI150034','HAPPY BOUY','Active','DSKI150034-HAPPY BOUY'),
+ ('DSKI150035','KHOMBA BABY (R/W)','Active','DSKI150035-KHOMBA BABY '),
+ ('DSKI150036','CHERAMY BABY (O/N)','Active','DSKI150036-CHERAMY BABY'),
+ ('DSKI150037','PEARS BABY (P/R/H)','Active','DSKI150037-PEARS BABY'),
+ ('DSKI150038','VIM 100g','Active','DSKI150038-VIM'),
+ ('DSKI150039','VIM 200g','Active','DSKI150039-VIM 200g'),
+ ('DSKI150040','VIM 400g','Active','DSKI150040-VIM 400g'),
+ ('DSKI150041','LA O JEE BATTA','Active','DSKI150041-LA O JEE BATTA'),
+ ('DSKI150042','LA O JEE 50g','Active','DSKI150042-LA O JEE 50g'),
+ ('DSKI150043','LA O JEE 100g','Active','DSKI150043-LA O JEE 100g'),
+ ('DSKI150044','CEYLONTA 50g','Active','DSKI150044-CEYLONTA 50g'),
+ ('DSKI150045','CEYLONTA 100g','Active','DSKI150045-CEYLONTA 100g');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150046','WATAWALA 50g','Active','0046-WATAWALA 50g'),
+ ('DSKI150047','WATAWALA 100g','Active','DSKI150047-WATAWALA 100g'),
+ ('DSKI150048','KOTAGALA SH.20/=','Active','DSKI150048-KOTAGALA SH.20/='),
+ ('DSKI150049','ZENRA 50g','Active','DSKI150049-ZENRA 50g'),
+ ('DSKI150050','ZENRA 100g','Active','DSKI150050-ZENRA 100g'),
+ ('DSKI150051','SAMAPOSA 80g','Active','DSKI150051-SAMAPOSA 80g'),
+ ('DSKI150052','SAMAPOSA 200g','Active','DSKI150052-SAMAPOSA 200g'),
+ ('DSKI150053','MAGGI NOODLES 28/=','Active','DSKI150053-MAGGI NOODLES 28/='),
+ ('DSKI150054','MAGGI NOODLES 30/=','Active','DSKI150054-MAGGI NOODLES 30/='),
+ ('DSKI150055','MAGGI NOODLES 47/=','Active','DSKI150055-MAGGI NOODLES 47/='),
+ ('DSKI150056','MAGGI NOODLES 50/=','Active','DSKI150056-MAGGI NOODLES 50/='),
+ ('DSKI150057','KOTTU MEE','Active','DSKI150057-KOTTU MEE'),
+ ('DSKI150058','PRIMA NOODELES 168/=','Active','DSKI150058-PRIMA NOODELES 168/='),
+ ('DSKI150059','PANADOL','Active','DSKI150059-PANADOL'),
+ ('DSKI150060','PNADOL SYRUP','Active','DSKI150060-PNADOL SYRUP');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150061','SAMAHAN','Active','DSKI150061-SAMAHAN'),
+ ('DSKI150062','ASAMODAGAM','Active','DSKI150062-ASAMODAGAM'),
+ ('DSKI150063','IDEX 70/=','Active','DSKI150063-IDEX 70/='),
+ ('DSKI150064','HEAD PAST 75/=','Active','DSKI150064-HEAD PAST 75/='),
+ ('DSKI150065','SIDDALEPA 25/=','Active','DSKI150065-SIDDALEPA 25/='),
+ ('DSKI150066','SIDDALEPA 40/=','Active','DSKI150066-SIDDALEPA 40/='),
+ ('DSKI150067','MORISION 100ml','Active','DSKI150067-MORISION 100ml'),
+ ('DSKI150068','BIC EASY2','Active','DSKI150068-BIC EASY2'),
+ ('DSKI150069','BIC ORANGE','Active','DSKI150069-BIC ORANGE'),
+ ('DSKI150070','BIC BLAD','Active','DSKI150070-BIC BLAD'),
+ ('DSKI150080','GILLETTE','Active','DSKI150080-GILLETTE'),
+ ('DSKI150081','VIDYUT BLADE','Active','DSKI150081-VIDYUT BLADE'),
+ ('DSKI150082','PANASONIC BATTRY','Active','DSKI150082-PANASONIC BATTRY'),
+ ('DSKI150083','AA','Active','DSKI150083-AA'),
+ ('DSKI150084','AAA','Active','DSKI150084-AAA'),
+ ('DSKI150085','SIGNAL 40g','Active','DSKI150085- SIGNAL 40g');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150086','SIGNAL 70g','Active','DSKI150086-SIGNAL 70g'),
+ ('DSKI150087','SIGNAL 120g','Active','DSKI150087-SIGNAL 120g'),
+ ('DSKI150088','SIGNAL 160g','Active','DSKI150088-SIGNAL 160g'),
+ ('DSKI150089','CLOGURD 40g','Active','DSKI150089-CLOGURD 40g'),
+ ('DSKI150090','CLOGURD 70g','Active','DSKI150090-CLOGURD 70g'),
+ ('DSKI150091','CLOGURD 120g','Active','DSKI150091-CLOGURD 120g'),
+ ('DSKI150092','SUDANTHA 40g','Active','DSKI150092-SUDANTHA 40g'),
+ ('DSKI150093','SUDANTHA 80g','Active','DSKI150093-SUDANTHA 80g'),
+ ('DSKI150094','SUPIRIVIKI 40g','Active','DSKI150094-SUPIRIVIKI 40g'),
+ ('DSKI150095','SUPIRIVIKI 70g','Active','DSKI150095-SUPIRIVIKI 70g'),
+ ('DSKI150096','SUPIRIVIKI 110g','Active','DSKI150096-SUPIRIVIKI 110g'),
+ ('DSKI150097','SIGNAL BRUSH','Active','DSKI150097-SIGNAL BRUSH'),
+ ('DSKI150098','SIGNAL JUNIOR','Active','DSKI150098-SIGNAL JUNIOR'),
+ ('DSKI150099','DENTA BRUSH','Active','DSKI150099-DENTA BRUSH'),
+ ('DSKI150100','DENTA JUNIOR','Active','DSKI150100-DENTA JUNIOR');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150101','NINJA COIL','Active','DSKI150101-NINJA COIL'),
+ ('DSKI150102','NILMA LIQUID','Active','DSKI150102-NILMA LIQUID'),
+ ('DSKI150103','DIAMOND(S)','Active','DSKI150103-DIAMOND(S)'),
+ ('DSKI150104','DIAMOND(M)','Active','DSKI150104-DIAMOND(M)'),
+ ('DSKI150105','DIAMOND(L)','Active','DSKI150105-DIAMOND(L)'),
+ ('DSKI150106','DIAMOND JACK','Active','DSKI150106-DIAMOND JACK'),
+ ('DSKI150107','RASAMALU SAMON','Active','DSKI150107-RASAMALU SAMON'),
+ ('DSKI150108','CAPTON SAMAN','Active','DSKI150108-CAPTON SAMAN'),
+ ('DSKI150109','BUDDY SHOPPIN','Active','DSKI150109-BUDDY SHOPPIN'),
+ ('DSKI150110','2/= SHOPPIN','Active','DSKI150110-2/= SHOPPIN'),
+ ('DSKI150111','3/= SHOPPIN','Active','DSKI150111-3/= SHOPPIN'),
+ ('DSKI150112','5/= SHOPPIN','Active','DSKI150112-5/= SHOPPIN'),
+ ('DSKI150113','10/= SHOPPIN','Active','DSKI150113-10/= SHOPPIN'),
+ ('DSKI150115','GROCERY (7x5)','Active','DSKI150115-GROCERY (7x5)'),
+ ('DSKI150116','GROCERY (7x10)','Active','DSKI150116-GROCERY (7x10)'),
+ ('DSKI150117','LUNCH SHEET','Active','DSKI150117-LUNCH SHEET');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150118','TOFFIE 1/=','Active','DSKI150118-TOFFIE 1/='),
+ ('DSKI150119','MYLADY','Active','DSKI150119-MYLADY'),
+ ('DSKI150120','HACKS','Active','DSKI150120-HACKS'),
+ ('DSKI150121','BUBBLE GUM','Active','DSKI150121-BUBBLE GUM'),
+ ('DSKI150122','CENTRE FRUIT','Active','DSKI150122-CENTRE FRUIT'),
+ ('DSKI150123','FOOT BALL 5/=','Active','DSKI150123-FOOT BALL 5/='),
+ ('DSKI150124','5/= PIECE (CA/MU/TM/KI/LAY/ID/POL)','Active','DSKI150124-5/= PIECE (CA/MU/TM/KI/LAY/ID/POL) '),
+ ('DSKI150125','WAFER CHOCKS','Active','DSKI150125-WAFER CHOCKS'),
+ ('DSKI150126','JUJUBBS 2/=','Active','DSKI150126-JUJUBBS 2/='),
+ ('DSKI150127','CHOCALATE 2/=','Active','DSKI150127-CHOCALATE 2/='),
+ ('DSKI150128','CHOCALATE 10/=','Active','DSKI150128-CHOCALATE 10/='),
+ ('DSKI150129','CHOCALATE 20/=','Active','DSKI150129-CHOCALATE 20/='),
+ ('DSKI150130','CHOCALATE 30/=','Active','DSKI150130-CHOCALATE 30/='),
+ ('DSKI150131','CHOCALATE 50/=','Active','DSKI150131-CHOCALATE 50/='),
+ ('DSKI150132','CHOCALATE 50/=','Active','DSKI150132-CHOCALATE 50/=');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150133','CHOCALATE 100/=','Active','DSKI150133-CHOCALATE 100/='),
+ ('DSKI150134','TIPI TIP 10/=','Active','DSKI150134-TIPI TIP 10/='),
+ ('DSKI150135','TIPI TIP 60/=','Active','DSKI150135-TIPI TIP 60/='),
+ ('DSKI150136','JELLY 5/=','Active','DSKI150136-JELLY 5/='),
+ ('DSKI150137','JELLY 10/=','Active','DSKI150137-JELLY 10/='),
+ ('DSKI150138','MASMELOS 5/=','Active','DSKI150138-MASMELOS 5/='),
+ ('DSKI150139','PEPERMINT','Active','DSKI150139-PEPERMINT'),
+ ('DSKI150140','MILLO','Active','DSKI150140-MILLO'),
+ ('DSKI150141','HANDUNKURU 10/=','Active','DSKI150141-HANDUNKURU 10/='),
+ ('DSKI150142','SIX O CLOCK 20/=','Active','DSKI150142-SIX O CLOCK 20/='),
+ ('DSKI150143','HANDUNKURU 50/=(R/P)','Active','DSKI150143-HANDUNKURU 50/=(R/P)'),
+ ('DSKI150144','AMRITHA 80/= (O/R/B/H/J)','Active','DSKI150144-AMRITHA 80/= (O/R/B/H/J)'),
+ ('DSKI150145','SOORYA MATCH','Active','00145-SOORYA MATCH'),
+ ('DSKI150146','MATCHES','Active','DSKI150146-MATCHES'),
+ ('DSKI150147','EVA ROSE','Active','DSKI150147-EVA ROSE');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150148','EVA PINK','Active','DSKI150148-EVA PINK'),
+ ('DSKI150149','AMEENS HAIR DIE','Active','DSKI150149-AMEENS HAIR DIE'),
+ ('DSKI150150','ORANGE BULB(40/60/75/100 W)','Active','DSKI150150-ORANGE BULB(40/60/75/100 W)'),
+ ('DSKI150151','REKHA PAPADAM','Active','DSKI150151-REKHA PAPADAM'),
+ ('DSKI150152','REKHA NOODELES 500g','Active','DSKI150152-REKHA NOODELES 500g'),
+ ('DSKI150153','LANKA SOYA 25/=','Active','DSKI150153-LANKA SOYA 25/='),
+ ('DSKI150154','LANKA SOYA 60/=','Active','DSKI150154-LANKA SOYA 60/='),
+ ('DSKI150155','LANKA SOYA 65/=','Active','DSKI150155-LANKA SOYA 65/='),
+ ('DSKI150156','SUNSILK SHAMPOO SH.(B/R/O/Y/BR)','Active','DSKI150156-SUNSILK SHAMPOO SH.(B/R/O/Y/BR)'),
+ ('DSKI150157','SUNSILK SHAMPOO BOT.(B/R/O/Y/BR)','Active','DSKI150157-SUNSILK SHAMPOO BOT.(B/R/O/Y/BR)'),
+ ('DSKI150158','LIFE BOUY SHAMPOO SH.(B/P/G)','Active','DSKI150158-LIFE BOUY SHAMPOO SH.(B/P/G)'),
+ ('DSKI150159','LIFE BOUY SHAMPOO BOT.(B/G)','Active','DSKI150159-LIFE BOUY SHAMPOO BOT.(B/G)'),
+ ('DSKI150160','LIFE BOUY SHAMPOO BOT.(P)','Active','DSKI150160-LIFE BOUY SHAMPOO BOT.(P)');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150161','DIVA WP 70g','Active','DSKI150161-DIVA WP 70g'),
+ ('DSKI150162','DIVA WP 200g','Active','DSKI150162-DIVA WP 200g'),
+ ('DSKI150163','DIVA WP 400g','Active','DSKI150163-DIVA WP 400g'),
+ ('DSKI150164','DIVA WP 1kg','Active','DSKI150164-DIVA WP 1kg'),
+ ('DSKI150165','SUNLIGHT WP 10/=','Active','DSKI150165-SUNLIGHT WP 10/='),
+ ('DSKI150166','SUNLIGHT WP 200g','Active','DSKI150166-SUNLIGHT WP 200g'),
+ ('DSKI150167','SUNLIGHT WP 400g','Active','DSKI150167-SUNLIGHT WP 400g'),
+ ('DSKI150168','SUNLIGHT WP 1kg','Active','DSKI150168-SUNLIGHT WP 1kg'),
+ ('DSKI150169','SURF EXEL 7/=','Active','DSKI150169-SURF EXEL 7/='),
+ ('DSKI150170','SURF EXEL 20/=','Active','DSKI150170-SURF EXEL 20/='),
+ ('DSKI150171','SURF EXEL 50/=','Active','DSKI150171-SURF EXEL 50/='),
+ ('DSKI150172','SURF EXEL 50/=','Active','DSKI150172-SURF EXEL 50/='),
+ ('DSKI150173','SURF EXEL 500g','Active','DSKI150173-SURF EXEL 500g'),
+ ('DSKI150174','CHAMPIKA BEDI','Active','DSKI150174-CHAMPIKA BEDI'),
+ ('DSKI150175','A K SURUTTU','Active','DSKI150175-A K SURUTTU');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150176','PAHANTHIRA 5/=','Active','DSKI150176-PAHANTHIRA 5/='),
+ ('DSKI150177','BABY CREAM 80/=','Active','DSKI150177-BABY CREAM 80/='),
+ ('DSKI150178','BABY CREAM 135/=','Active','DSKI150178-BABY CREAM 135/='),
+ ('DSKI150179','BABY POWDER','Active','DSKI150179-BABY POWDER'),
+ ('DSKI150180','BABY COLONE','Active','DSKI150180-BABY COLONE'),
+ ('DSKI150181','BABY SHAMPOO','Active','DSKI150181-BABY SHAMPOO'),
+ ('DSKI150182','KUMARIKA H/O 140/=','Active','DSKI150182-KUMARIKA H/O 140/='),
+ ('DSKI150183','KUMARIKA H/O 150/=','Active','DSKI150183-KUMARIKA H/O 150/='),
+ ('DSKI150184','KESHA H/O','Active','DSKI150184-KESHA H/O'),
+ ('DSKI150185','TIKIRI MARIE 100g','Active','DSKI150185-TIKIRI MARIE 100g'),
+ ('DSKI150186','TIKIRI MARIE 400g','Active','DSKI150186-TIKIRI MARIE 400g'),
+ ('DSKI150187','LITE MARIE 100g','Active','DSKI150187-LITE MARIE 100g'),
+ ('DSKI150188','LITE MARIE 400g','Active','DSKI150188-LITE MARIE 400g'),
+ ('DSKI150189','CHOCOLATE MARIE 100g','Active','DSKI150189-CHOCOLATE MARIE 100g');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150190','CHOCOLATE MARIE 400g','Active','DSKI150190-CHOCOLATE MARIE 400g'),
+ ('DSKI150191','CREAM CRACKER 50/=','Active','DSKI150191-CREAM CRACKER 50/='),
+ ('DSKI150192','CREAM CRACKER 75/=','Active','DSKI150192-CREAM CRACKER 75/='),
+ ('DSKI150193','CREAM CRACKER 100/=','Active','DSKI150193-CREAM CRACKER 100/='),
+ ('DSKI150194','CREAM CRACKER 175/=','Active','DSKI150194-CREAM CRACKER 175/='),
+ ('DSKI150195','LEMON PUFF (S)','Active','DSKI150195-LEMON PUFF (S)'),
+ ('DSKI150196','LEMON PUFF (L)','Active','DSKI150196-LEMON PUFF (L)'),
+ ('DSKI150197','CHOCOLATE PUFF(S)','Active','DSKI150197-CHOCOLATE PUFF(S)'),
+ ('DSKI150198','CHOCOLATE PUFF(L)','Active','DSKI150198-CHOCOLATE PUFF(L)'),
+ ('DSKI150199','CHOCALATE CREAM 100g','Active','DSKI150199-CHOCALATE CREAM 100g'),
+ ('DSKI150200','CHOCALATE CREAM 400g','Active','DSKI150200-CHOCALATE CREAM 400g'),
+ ('DSKI150201','GINGER 100g','Active','DSKI150201-GINGER 100g'),
+ ('DSKI150202','GINGER 400g','Active','DSKI150202-GINGER 400g'),
+ ('DSKI150203','NICE 100g','Active','DSKI150203-NICE 100g');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150204','NICE 400g','Active','DSKI150204-NICE 400g'),
+ ('DSKI150205','WAFERS 100g(C/V/L)','Active','DSKI150205-WAFERS 100g(C/V/L)'),
+ ('DSKI150206','WAFERS 400g(C/V/L)','Active','DSKI150206-WAFERS 400g(C/V/L)'),
+ ('DSKI150207','HAWAIN COKIES 50/=','Active','DSKI150207-HAWAIN COKIES 50/='),
+ ('DSKI150208','HAWAIN COKIES 95/=','Active','DSKI150208-HAWAIN COKIES 95/='),
+ ('DSKI150209','MSC 40/=','Active','DSKI150209-MSC 40/='),
+ ('DSKI150210','MSC 90/=','Active','DSKI150210-MSC 90/='),
+ ('DSKI150211','TIPPIN 70/=(G / B)','Active','DSKI150211-TIPPIN 70/=(G / B)'),
+ ('DSKI150212','MUNCHEE SHORTIES 400g','Active','DSKI150212-MUNCHEE SHORTIES 400g'),
+ ('DSKI150213','SHORTIES 400g(D /MIC /LU)','Active','DSKI150213-SHORTIES 400g(D /MIC /LU)'),
+ ('DSKI150214','SHORTIES 400g(CHE)','Active','DSKI150214-SHORTIES 400g(CHE)'),
+ ('DSKI150215','WAFERS 20/=(C / S / L / V)','Active','DSKI150215-WAFERS 20/=(C / S / L / V)'),
+ ('DSKI150216','WAFERS 110/=(C / S / L / V)','Active','DSKI150216-WAFERS 110/=(C / S / L / V)'),
+ ('DSKI150217','WAFERS 205/=(C / S / L / V)','Active','DSKI150217-WAFERS 205/=(C / S / L / V)');
+INSERT INTO `items` (`iid`,`name`,`status`,`item_combo`) VALUES 
+ ('DSKI150218','PEEPS 20/=(C / V )','Active','DSKI150218-PEEPS 20/=(C / V )');
+/*!40000 ALTER TABLE `items` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`market_return`
+--
+
+DROP TABLE IF EXISTS `market_return`;
+CREATE TABLE `market_return` (
+  `id` int(10) NOT NULL auto_increment,
+  `invoice_no` varchar(255) default NULL,
+  `iid` varchar(255) default NULL,
+  `item_name` varchar(255) default NULL,
+  `unit_price` double(10,0) default NULL,
+  `qty` double(10,0) default NULL,
+  `netamount` double(10,0) default NULL,
+  `status` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dmk`.`market_return`
+--
+
+/*!40000 ALTER TABLE `market_return` DISABLE KEYS */;
+INSERT INTO `market_return` (`id`,`invoice_no`,`iid`,`item_name`,`unit_price`,`qty`,`netamount`,`status`) VALUES 
+ (1,'DSKI15000001','DSKI150133','null',20,3,60,'Visible'),
+ (2,'DSKI15000001','DSKI150134','null',20,3,60,'Visible'),
+ (3,'DSKI15000017','00145','SOORYA MATCH',21,2,42,'Visible'),
+ (4,'DSKI15000017','00146','MATCHES',20,1,20,'Visible'),
+ (5,'DSKI15000024','00146','MATCHES',23,1,23,'Visible'),
+ (6,'DSKI15000025','00146','MATCHES',20,2,40,'Visible'),
+ (7,'DSKI15000027','00145','SOORYA MATCH',20,3,60,'Visible'),
+ (8,'DSKI15000028','00145','SOORYA MATCH',30,1,30,'Visible'),
+ (9,'DSKI15000029','00146','MATCHES',30,1,30,'Visible'),
+ (10,'DSKI15000030','00145','SOORYA MATCH',200,3,600,'non');
+/*!40000 ALTER TABLE `market_return` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`paths`
+--
+
+DROP TABLE IF EXISTS `paths`;
+CREATE TABLE `paths` (
+  `id` int(11) NOT NULL auto_increment,
+  `path` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`paths`
+--
+
+/*!40000 ALTER TABLE `paths` DISABLE KEYS */;
+/*!40000 ALTER TABLE `paths` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`return_ability`
+--
+
+DROP TABLE IF EXISTS `return_ability`;
+CREATE TABLE `return_ability` (
+  `id` int(11) NOT NULL auto_increment,
+  `cheque_no` varchar(250) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`return_ability`
+--
+
+/*!40000 ALTER TABLE `return_ability` DISABLE KEYS */;
+INSERT INTO `return_ability` (`id`,`cheque_no`) VALUES 
+ (1,'1');
+/*!40000 ALTER TABLE `return_ability` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`route`
+--
+
+DROP TABLE IF EXISTS `route`;
+CREATE TABLE `route` (
+  `id` int(10) NOT NULL auto_increment,
+  `route_no` varchar(10) default NULL,
+  `route_name` varchar(255) default NULL,
+  `route_cc` varchar(255) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dmk`.`route`
+--
+
+/*!40000 ALTER TABLE `route` DISABLE KEYS */;
+INSERT INTO `route` (`id`,`route_no`,`route_name`,`route_cc`) VALUES 
+ (1,'01','01','01');
+/*!40000 ALTER TABLE `route` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`salable_return`
+--
+
+DROP TABLE IF EXISTS `salable_return`;
+CREATE TABLE `salable_return` (
+  `id` int(10) NOT NULL auto_increment,
+  `invoice_no` varchar(255) default NULL,
+  `iid` varchar(255) default NULL,
+  `item_name` varchar(255) default NULL,
+  `unit_price` double(10,0) default NULL,
+  `qty` double(10,0) default NULL,
+  `netamount` double(10,0) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dmk`.`salable_return`
+--
+
+/*!40000 ALTER TABLE `salable_return` DISABLE KEYS */;
+INSERT INTO `salable_return` (`id`,`invoice_no`,`iid`,`item_name`,`unit_price`,`qty`,`netamount`) VALUES 
+ (1,'DSKI15000001','111','11',22,22,22),
+ (2,'DSKI15000016','00145','SOORYA MATCH',10,1,10),
+ (3,'DSKI15000017','00145','SOORYA MATCH',10,1,10),
+ (4,'DSKI15000018','00145','SOORYA MATCH',10,2,20),
+ (5,'DSKI15000024','00145','SOORYA MATCH',20,2,40),
+ (6,'DSKI15000025','00145','SOORYA MATCH',20,1,20),
+ (7,'DSKI15000026','00145','SOORYA MATCH',5,2,10),
+ (8,'DSKI15000027','00145','SOORYA MATCH',50,2,100),
+ (9,'DSKI15000028','00145','SOORYA MATCH',20,1,20),
+ (10,'DSKI15000029','00145','SOORYA MATCH',20,1,20),
+ (11,'DSKI15000030','00145','SOORYA MATCH',200,1,200),
+ (12,'DSKI15000031','00146','MATCHES',10,1,10);
+/*!40000 ALTER TABLE `salable_return` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`stock`
+--
+
+DROP TABLE IF EXISTS `stock`;
+CREATE TABLE `stock` (
+  `id` int(11) NOT NULL auto_increment,
+  `iid` varchar(45) NOT NULL,
+  `name` varchar(45) default NULL,
+  `unit_price` double default NULL,
+  `qty` int(11) default NULL,
+  `stock_combo` varchar(45) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `fk_stock_items1_idx` (`iid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`stock`
+--
+
+/*!40000 ALTER TABLE `stock` DISABLE KEYS */;
+INSERT INTO `stock` (`id`,`iid`,`name`,`unit_price`,`qty`,`stock_combo`) VALUES 
+ (1,'00145','SOORYA MATCH',25,5,'00145-SOORYA MATCH'),
+ (2,'00146','MATCHES',25,408,'00146-MATCHES');
+/*!40000 ALTER TABLE `stock` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`supplier`
+--
+
+DROP TABLE IF EXISTS `supplier`;
+CREATE TABLE `supplier` (
+  `sid` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `contact_no` char(10) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `supplier_combo` varchar(250) default NULL,
+  `status` varchar(45) default NULL,
+  PRIMARY KEY  (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`supplier`
+--
+
+/*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
+INSERT INTO `supplier` (`sid`,`name`,`contact_no`,`email`,`supplier_combo`,`status`) VALUES 
+ ('DSKS15000001','K K','0717877500','','DSKS15000001-KK','Active'),
+ ('DSKS15000002','S K','0772737765','','DSKS15000002-SK','Active'),
+ ('DSKS15000003','V R','0773247436','','DSKS15000003-VR','Active'),
+ ('DSKS15000004','V R 2','0777785782','','DSKS15000004-VR2','Active'),
+ ('DSKS15000005','K U A','0773661414','','DSKS15000005-KUA','Active'),
+ ('DSKS15000006','C O','0772629371','','DSKS15000006-CO','Active'),
+ ('DSKS15000007','T B','0774088203','','DSKS15000007-TB','Active'),
+ ('DSKS15000008','DAINTEE','0718698959','','DSKS15000008-DAINTEE','Active'),
+ ('DSKS15000009','SAMAPOSHA','0771436272','','DSKS15000009-SAMAPOSHA','Active');
+/*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `dmk`.`supplier_payments`
+--
+
+DROP TABLE IF EXISTS `supplier_payments`;
+CREATE TABLE `supplier_payments` (
+  `id` int(11) NOT NULL auto_increment,
+  `grn_no` varchar(45) NOT NULL,
+  `amount` double default NULL,
+  `method` varchar(45) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `fk_supplier_payments_grn1_idx` (`grn_no`),
+  CONSTRAINT `fk_supplier_payments_grn1` FOREIGN KEY (`grn_no`) REFERENCES `grn` (`grn_no`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dmk`.`supplier_payments`
+--
+
+/*!40000 ALTER TABLE `supplier_payments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `supplier_payments` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

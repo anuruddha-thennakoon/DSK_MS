@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="view_stock" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1266d12c-be46-445b-90f6-43793445ff20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="total" class="java.lang.String"/>
+	<field name="Item No" class="java.lang.String"/>
+	<field name="Item Name" class="java.lang.String"/>
+	<field name="Qty" class="java.lang.String"/>
+	<field name="Unit Price(Rs)" class="java.lang.String"/>
+	<field name="Net Amount(Rs)" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="278" height="27" uuid="ff5b27a7-0e1a-4bd5-966d-033cc013c4e8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Current Stock]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="288" y="0" width="257" height="27" uuid="e90ea3ce-ddfd-4f7c-bc33-14a1a5d9b16c"/>
+				<textElement textAlignment="Right">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="2" width="293" height="20" uuid="3b1e427b-300a-4c43-a77b-4a43e90623ad"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="2" width="80" height="20" uuid="4ff9df97-1466-47e3-be22-4d87ac5504d9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="2" width="80" height="20" uuid="90993731-1791-4267-a620-7e14f4d2810b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unit Price(Rs)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="24" width="553" height="1" uuid="bd063b07-3578-4d39-b292-f25572b88939"/>
+			</line>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="3ffa57c6-b4b8-4c4e-a84b-d9f305244e47"/>
+			</line>
+			<staticText>
+				<reportElement x="461" y="2" width="91" height="20" uuid="bc9cf7a0-689a-477a-a5cd-a252f88aa577"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Net Amount(Rs)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="8" y="0" width="293" height="20" uuid="6ca4c970-c85f-4af4-95e9-e38da0287130"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Item Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="0" width="80" height="20" uuid="23de3cf2-9f5e-43c8-aadf-6012e021f6a2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="381" y="0" width="80" height="20" uuid="9437b612-c281-47be-9922-6e45ef350fee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Unit Price(Rs)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="461" y="0" width="91" height="20" uuid="a7ef62c3-22a3-4dad-967e-1026e5b3b45b"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Net Amount(Rs)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="24">
+			<staticText>
+				<reportElement x="338" y="2" width="129" height="20" uuid="861f0a20-6059-4d37-b47d-ba611cc9f0c1"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total amount(Rs)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="467" y="2" width="85" height="20" uuid="6287441f-dc8b-4cc3-aab5-da5068a2c454"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1" uuid="7bdd201f-d58a-4d3f-b7ea-7d7eb5c1bf66"/>
+			</line>
+			<line>
+				<reportElement x="1" y="23" width="555" height="1" uuid="477db59a-1625-4981-9223-ccdf50b5732a"/>
+			</line>
+		</band>
+	</columnFooter>
+</jasperReport>

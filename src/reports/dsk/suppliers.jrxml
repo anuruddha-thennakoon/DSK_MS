@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="suppliers" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f52cbbf4-b7de-47f4-9ca0-f46f3ae52300">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Contact No" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="28" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="287" y="0" width="257" height="27" uuid="cd606d3d-0846-45c1-8071-929375eb7360"/>
+				<textElement textAlignment="Right">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="0" width="278" height="27" uuid="1f899431-834d-4c93-836a-89dc96382711"/>
+				<textElement verticalAlignment="Top">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Suppliers]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="27" width="555" height="1" uuid="c75b0722-8716-43d4-a098-dbade2f72802"/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="62" splitType="Stretch">
+			<textField>
+				<reportElement x="95" y="0" width="449" height="20" uuid="15218177-62db-4519-b391-ff450fcea796"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="20" width="449" height="20" uuid="8ad4d8f0-d8e1-4eae-88f1-09b447da1046"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Contact No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="40" width="449" height="20" uuid="4f46fa86-0368-4ceb-ba9a-7a17a4219f5b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="0" width="85" height="20" uuid="de8de9ef-7eeb-44f7-b879-9300d34f8ab4"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="20" width="85" height="20" uuid="eba5cd6c-920c-46c8-8fdc-93c03fcf967c"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="40" width="85" height="20" uuid="ffee7b61-0b6d-4753-9c45-2598ab25fff9"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[email]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="61" width="554" height="1" uuid="6d4925d4-12f8-410c-9b80-10f2369df52c"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

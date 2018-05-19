@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="customers" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="42021819-56b2-4091-af7f-f2c10720a7de">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="Name" class="java.lang.String"/>
+	<field name="Address" class="java.lang.String"/>
+	<field name="Contact No 1" class="java.lang.String"/>
+	<field name="Contact No 2" class="java.lang.String"/>
+	<field name="Route" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="278" height="27" uuid="0b96dd46-28a1-4f13-a9b1-02c66bd365c8"/>
+				<textElement verticalAlignment="Top">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Customers]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="287" y="0" width="257" height="27" uuid="ad203027-b88e-4506-924b-9257e8688ac7"/>
+				<textElement textAlignment="Right">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="28" width="555" height="1" uuid="14ff5796-eb28-4d17-930a-e972102fcb45"/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="109" splitType="Stretch">
+			<textField>
+				<reportElement x="121" y="0" width="423" height="20" uuid="2b589636-5dd8-4cd3-a46d-1f1b3f866985"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="20" width="423" height="20" uuid="c593d4e9-9f3f-45c5-b3bf-5f5c20b8c024"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="40" width="423" height="20" uuid="701c68ef-48eb-423a-98d1-6bc4093b8d08"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Contact No 1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="60" width="423" height="20" uuid="36ce4985-8fe7-4712-8417-9de156490de8"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Contact No 2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="80" width="423" height="20" uuid="ad2e435f-6572-49f8-981b-5e3df22ceda5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Route}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="0" width="111" height="20" uuid="4194585d-1f3b-4d59-8867-40285d007d16"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="20" width="111" height="20" uuid="75de8ed7-1464-41df-983e-5116afb117fc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="40" width="111" height="20" uuid="13e5ec96-8f95-4d5e-aaaf-eb42e5d6cd8f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Contact No 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="60" width="111" height="20" uuid="34a17dc9-f97b-460e-b370-2b2e21ada0ca"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Contact No 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="80" width="111" height="20" uuid="1b0ae8da-b0bb-49fd-ad7f-9099716f3430"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Route]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="101" width="553" height="1" uuid="e779ad5b-4a26-497c-98c2-e473d2aa7794"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
